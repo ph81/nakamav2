@@ -38,6 +38,7 @@ export function useFeaturedBanners() {
     }
 
     getFeaturedBanners();
+    console.log('feat banners'+ getFeaturedBanners())
 
     return () => {
       controller.abort();

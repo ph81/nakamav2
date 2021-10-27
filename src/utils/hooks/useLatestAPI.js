@@ -26,6 +26,7 @@ export function useLatestAPI() {
     }
 
     getAPIMetadata();
+    console.log('metadata'+ getAPIMetadata())
 
     return () => {
       controller.abort();
