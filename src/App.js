@@ -1,11 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { useRoutes } from 'hookrouter';
-import routes from './helpers/Navigation'
+//import { useRoutes } from 'hookrouter';
+import Routes from './utils/routes';
+import { GlobalProvider } from './context/GlobalContext';
+import { ProductsProvider } from './context/ProductContext';
 
 const App = () => {
-  const routeResult = useRoutes(routes);
-  return routeResult;
+  return (
+    <GlobalProvider>
+      <ProductsProvider>
+        <Routes />
+      </ProductsProvider>
+    </GlobalProvider>
+  )
 }
 
 const rootElement = document.getElementById("root");
